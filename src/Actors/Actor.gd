@@ -7,6 +7,7 @@ class_name Actor
 export var gravity: = 4000.0
 export var move_speed: = Vector2(300.0, 1400.0)
 
+var FLOOR_NORMAL: = Vector2.UP
 
 var _velocity: Vector2 = Vector2.ZERO
 

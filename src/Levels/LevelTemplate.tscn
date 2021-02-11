@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/background.png" type="Texture" id=4]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
 
 [node name="LevelTemplate" type="Node2D"]
 __meta__ = {
@@ -73,7 +74,7 @@ position = Vector2( 2264, 424 )
 position = Vector2( 1956, 313 )
 
 [node name="Coin2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 775, 346 )
+position = Vector2( 613, 413 )
 
 [node name="Coin3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1160, 621 )
@@ -89,5 +90,10 @@ position = Vector2( 476, 428 )
 
 [node name="Coin9" parent="." instance=ExtResource( 5 )]
 position = Vector2( 946, 255 )
+
+[node name="Portal2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 409, 266 )
+next_scene_path = "src/Levels/Level2.tscn"
+test_int = 10
 
 [editable path="Player"]

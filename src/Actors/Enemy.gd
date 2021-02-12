@@ -1,5 +1,8 @@
 extends "res://src/Actors/Actor.gd"
 
+# Enemies score value
+export var score: = 100
+
 # `_ready` is called on all nodes at start, deepest first
 func _ready() -> void:
 	# If you uncomment below, and set `Process Parent` and `Physics Process P` to `On`
@@ -14,8 +17,8 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 		return
 	# Prevent enemy from doing damage to player while the enemy is being deleted
 	get_node("CollisionShape2D").disabled = true
-	queue_free()
-
+	die()
+	
 
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
@@ -25,5 +28,6 @@ func _physics_process(delta: float) -> void:
 		_velocity.x *= -1.0
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 
-
-
+func die() -> void:
+	queue_free()
+	PlayerData.score += score

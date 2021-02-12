@@ -9,10 +9,9 @@ func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 
 func _on_EnemyDetector_body_entered(body: Node) -> void:
 	# Kill player
-	queue_free()
+	die()
 
-	
-	
+
 func _physics_process(delta: float) -> void:
 	# used to make jump responsive to button hold time
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
@@ -49,4 +48,6 @@ func calculate_stomp_velocity(current_velocity: Vector2, impulse: float) -> Vect
 	new_velocity.y = -impulse
 	return new_velocity
 
-
+func die() -> void:
+	PlayerData.set_deaths += 1
+	queue_free()

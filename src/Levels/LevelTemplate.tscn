@@ -94,6 +94,5 @@ position = Vector2( 946, 255 )
 [node name="Portal2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 409, 266 )
 next_scene_path = "src/Levels/Level2.tscn"
-test_int = 10
 
 [editable path="Player"]

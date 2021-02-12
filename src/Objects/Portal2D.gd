@@ -8,7 +8,7 @@ onready var anim_player: AnimationPlayer = $AnimationPlayer
 # Using a path to load later instead of a PackedScene here because
 # PackedScean results in a circular load on start. (Level 1 loads Level 2 loads Level 1)
 #export var next_scene: PackedScene
-export var next_scene_path: String
+export(String, FILE) var next_scene_path: = ""
 export var test_int: = 10
 
 func _on_body_entered(body: Node) -> void:
@@ -16,8 +16,7 @@ func _on_body_entered(body: Node) -> void:
 
 
 func _get_configuration_warning() -> String:
-	#return "The `next_scene` property is empty!" if not next_scene else ""
-	return "The `next_scene_path` property is empty!" if not next_scene_path else ""
+	return "next_scene_path must be set for the button to work" if next_scene_path == "" else ""
 
 func teleport() -> void:
 	anim_player.play("fade_in")

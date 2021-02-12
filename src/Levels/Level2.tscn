@@ -39,6 +39,5 @@ position = Vector2( 914, 819 )
 position = Vector2( 247, 659 )
 
 [node name="Portal2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2462, 826 )
-next_scene_path = "src/Levels/LevelTemplate.tscn"
-test_int = 10
+position = Vector2( 2461, 826 )
+next_scene_path = "res://src/Screens/EndScreen.tscn"

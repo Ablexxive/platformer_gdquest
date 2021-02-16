@@ -49,5 +49,6 @@ func calculate_stomp_velocity(current_velocity: Vector2, impulse: float) -> Vect
 	return new_velocity
 
 func die() -> void:
-	PlayerData.set_deaths += 1
+	print("incrementing palyer deaths")
+	PlayerData.deaths += 1
 	queue_free()

@@ -9,11 +9,16 @@ signal player_died
 
 # `setget fn1, fn2` fn1 - setter, fn2 - getter
 var score: = 0 setget set_score
-var deaths: = 0
+var deaths: = 0 setget set_deaths
+var is_dead: = false
 
 func reset() -> void:
 	score = 0
 	deaths = 0
+	self.respawn()
+
+func respawn() -> void:
+	is_dead = false
 
 func set_score(value: int) -> void:
 	score = value
@@ -22,4 +27,6 @@ func set_score(value: int) -> void:
 
 func set_deaths(value: int) -> void:
 	deaths = value
+	is_dead = true
+	print("Emitting player_died signal")
 	emit_signal("player_died")

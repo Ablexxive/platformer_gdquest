@@ -17,6 +17,7 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 		return
 	# Prevent enemy from doing damage to player while the enemy is being deleted
 	get_node("CollisionShape2D").disabled = true
+	print("Stomp detected")
 	die()
 	
 
@@ -29,5 +30,6 @@ func _physics_process(delta: float) -> void:
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 
 func die() -> void:
+	print("Killing enemy.")
 	queue_free()
 	PlayerData.score += score

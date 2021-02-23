@@ -35,7 +35,7 @@ margin_left = -174.0
 margin_top = 266.0
 margin_right = 174.0
 margin_bottom = 323.0
-text = "Godo-tta-here"
+text = "God-otta-here"
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
 anchor_left = 0.5
